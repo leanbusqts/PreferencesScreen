@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.preference.PreferenceScreen xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    >
+    <PreferenceCategory app:title="@string/setts">
+        <SwitchPreferenceCompat
+            app:key="switch"
+            app:title="Enable message notifications"
+            app:defaultValue="false"/>
+        <CheckBoxPreference
+            app:key="checkbox"
+            app:summary="Tap to check if on or off"
+            app:title="Checkbox Preference"
+            android:defaultValue="false"/>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="General">
+        <EditTextPreference
+            android:dialogTitle="Enter a text"
+            android:key="text"
+            android:summary="Click to show a text entry dialog"
+            android:title="EditText Preference"
+            android:inputType="text"/>
+        <EditTextPreference
+            app:key="counting"
+            app:title="Counting preference"/>
+        <EditTextPreference
+            app:key="number"
+            app:title="Numbers only preference"/>
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/advanced">
+        <MultiSelectListPreference
+            app:dialogTitle="Dialog title"
+            app:entries="@array/settings_list_time"
+            app:entryValues="@array/settings_list_values"
+            app:key="multi_select_list"
+            app:title="Multiselect title" />
+        <ListPreference
+            app:dialogTitle="Select duration"
+            app:entries="@array/settings_list_time"
+            app:entryValues="@array/settings_list_values"
+            app:key="list"
+            app:summary="Click to show a list to choose from"
+            app:title="List Preference" />
+    </PreferenceCategory>
+    <PreferenceCategory app:title="@string/about">
+        <Preference
+            app:key="permissions"
+            app:title="Permission"
+            app:summary="Check location permission"/>
+        <Preference
+            app:key="feedback"
+            app:title="Send feedback"
+            app:summary="Report technical issues or suggest new features"/>
+        <Preference
+            app:key="webpage"
+            app:title="View webpage">
+            <intent
+                android:action="android.intent.action.VIEW"
+                android:data="http://www.google.com" />
+        </Preference>
+    </PreferenceCategory>
+</androidx.preference.PreferenceScreen>
